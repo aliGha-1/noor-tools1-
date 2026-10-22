@@ -1,0 +1,15 @@
+ابدأ من هنا — NOOR TOOLS
+
+1) فك ضغط ملف NOOR_TOOLS_GITHUB_READY.zip.
+2) افتح Terminal داخل المجلد الذي يحتوي site وandroid وREADME_AR.md.
+3) نفّذ الأوامر التالية بعد استبدال YOUR-USERNAME باسم حسابك:
+
+git init
+git branch -M main
+git add .
+git commit -m "Upload NOOR TOOLS"
+git remote add origin https://github.com/YOUR-USERNAME/noor-tools.git
+git push -u origin main
+
+قبل ذلك أنشئ مستودعًا فارغًا على GitHub باسم noor-tools.
+للتفاصيل: افتح README_AR.md
