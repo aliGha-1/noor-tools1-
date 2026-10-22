@@ -1,30 +1,68 @@
 name: Deploy Noor Tools website
+
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 jobs:
   deploy:
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Verify website files
+        run: |
+          if [ ! -f site/index.html ]; then
+            echo "ERROR: site/index.html not found"
+            echo "Repository files:"
+            ls -la
+            echo "Site directory:"
+            ls -la site || true
+            exit 1
+          fi
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
+
+**ملحوظة:** السطر `enablement: true` بيطلب من الإجراء تفعيل Pages لو احتاج، لكنه مش ضمان لو المستودع أو صلاحيات الحساب مش بتسمح بذلك.
+
+## ✅ الخطوة الثانية: احفظ التعديل
+
+1. اضغط **Commit changes**.
+2. ارجع إلى **Actions**.
+3. افتح `Deploy Noor Tools website`.
+4. افتح آخر تشغيل وشوف النتيجة.
+
+## ⚠️ لو ظهر خطأ جديد
+
+- لو ظهر `site/index.html not found`، يبقى لازم نعرف مكان ملف `index.html` ونعدّل مسار الرفع.
+- لو ظهر نفس خطأ `Get Pages site failed`، ابعتلي رسالة الخطأ الجديدة؛ ساعتها هنفحص إعداد Pages وصلاحيات المستودع بدل ما نكرر التعديلات.
+
+**ومتقلقش:** الملف ده خاص بنشر الموقع، ومش محتاج تغيّر ملف `Build Noor Tools APK` اللي بيبني التطبيق للموبايل.
