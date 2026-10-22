@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101827"><meta name="description" content="نور تولز - إدارة محل العدد والمستلزمات">
-<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="logo.png" type="image/png">
 <title>نور تولز | إدارة المحل</title>
 <style>
 :root{--bg:#0c1220;--panel:#151e30;--panel2:#1b2840;--line:#2b3952;--text:#eef4ff;--muted:#9eacc3;--gold:#f4b942;--gold2:#ffd879;--green:#36c991;--red:#ff6b75;--blue:#65a9ff;--radius:18px;--shadow:0 18px 45px #0005}
@@ -11,12 +11,46 @@
 @media(max-width:1050px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.app{grid-template-columns:220px 1fr}.invoice-layout{grid-template-columns:1fr}}
 @media(max-width:720px){.app{display:block}.sidebar{position:fixed;z-index:30;right:0;top:0;width:260px;transform:translateX(105%);transition:.25s;height:100dvh;box-shadow:var(--shadow)}.sidebar.open{transform:translateX(0)}.mobile-menu{display:inline-flex}.main{padding:17px 13px 35px}.topbar{align-items:flex-start}.topbar h1{font-size:23px}.top-actions .pill{display:none}.stats{gap:10px}.card{padding:14px}.stat-value{font-size:22px}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.invoice-line{grid-template-columns:minmax(0,1fr) 65px 75px 30px;gap:5px}.invoice-line .field{padding:8px 6px;font-size:12px}.bar-row{grid-template-columns:90px 1fr 30px}.toolbar select{flex:1}.top-actions .btn{padding:10px}.quick-grid{gap:8px}}
 @media print{body{background:white;color:#111}.sidebar,.topbar,.toolbar,.no-print,.footer{display:none!important}.app{display:block}.main{padding:0}.card{box-shadow:none;border:0;background:white;color:#111}.table-wrap{border:0}table{min-width:0}th,td{color:#111;border-color:#ddd}.print-only{display:block}}
+/* NOOR TOOLS PREMIUM CINEMATIC THEME — preserves existing app logic */
+:root{--gold:#f4c15d;--gold2:#ffe6a3;--shadow:0 20px 60px rgba(0,0,0,.34);--radius:20px}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(ellipse at 90% 0%,rgba(45,70,111,.48),transparent 38%),radial-gradient(ellipse at 0% 100%,rgba(69,43,91,.22),transparent 36%),var(--bg);background-attachment:fixed}
+.sidebar{background:linear-gradient(180deg,rgba(11,18,31,.98),rgba(9,14,25,.98));backdrop-filter:blur(18px);border-left:1px solid rgba(244,193,93,.18)}
+.brand{padding-bottom:20px}.brand img,.login-logo{filter:drop-shadow(0 0 17px rgba(244,193,93,.22))}
+.nav button,.nav a{border:1px solid transparent;transition:background .22s ease,transform .22s ease,border-color .22s ease}
+.nav button:hover,.nav a:hover{transform:translateX(-3px);border-color:rgba(244,193,93,.2)}
+.nav button.active,.nav a.active{background:linear-gradient(110deg,rgba(244,193,93,.17),rgba(244,193,93,.035));border-color:rgba(244,193,93,.24)}
+.main{min-width:0}.topbar{padding-bottom:18px}.topbar h1{letter-spacing:-.5px}.eyebrow{color:var(--gold2);letter-spacing:1px}
+.card{background:linear-gradient(145deg,rgba(29,43,65,.97),rgba(15,24,39,.98));border:1px solid rgba(157,179,215,.14);border-radius:var(--radius);box-shadow:0 12px 36px rgba(0,0,0,.16);transition:border-color .22s ease,transform .22s ease}
+.card:hover{border-color:rgba(244,193,93,.24)}
+.stat-icon{background:linear-gradient(145deg,rgba(244,193,93,.22),rgba(244,193,93,.055));border:1px solid rgba(244,193,93,.14);box-shadow:inset 0 1px rgba(255,255,255,.04)}
+.stat-value{letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+.btn{background:linear-gradient(135deg,#ffe6a3,#e7ad3d);color:#201707;border:1px solid rgba(255,255,255,.17);border-radius:13px;box-shadow:0 5px 15px rgba(0,0,0,.12);transition:transform .18s ease,filter .18s ease,box-shadow .18s ease}
+.btn:hover{filter:brightness(1.07);transform:translateY(-2px);box-shadow:0 9px 22px rgba(0,0,0,.2)}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn.secondary,.btn.ghost,.icon-btn{background:linear-gradient(145deg,#26364f,#19263a);border:1px solid #3b4b65;color:var(--text);box-shadow:none}
+.field,select.field,textarea.field{background:rgba(7,13,24,.78);border:1px solid #35445e;border-radius:12px;transition:border-color .2s ease,box-shadow .2s ease}
+.field:focus,select.field:focus,textarea.field:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(244,193,93,.12);outline:none}
+.modal-backdrop{background:rgba(2,5,12,.82);backdrop-filter:blur(10px)}
+.modal{background:linear-gradient(145deg,#1a2940,#101827);border-color:rgba(244,193,93,.24);border-radius:24px;box-shadow:0 30px 100px rgba(0,0,0,.55);animation:noorModalIn .22s ease-out}
+@keyframes noorModalIn{from{opacity:0;transform:translateY(10px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+.table-wrap{border-radius:16px;border:1px solid var(--line);overflow:auto}
+thead th,th{background:#101827}tbody tr{transition:background .16s ease}tbody tr:hover{background:rgba(244,193,93,.045)}
+.quick{border-radius:17px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.quick:hover{transform:translateY(-3px);border-color:rgba(244,193,93,.34);box-shadow:0 12px 28px rgba(0,0,0,.18)}
+.tag{border:1px solid rgba(168,209,255,.12);border-radius:999px}
+.pill{border:1px solid rgba(157,179,215,.12)}
+.toast{border-radius:14px;box-shadow:var(--shadow);animation:noorModalIn .2s ease-out}
+.section-head{gap:12px}.search{border-radius:13px}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media(max-width:720px){.card{border-radius:17px}.modal{padding:17px;border-radius:20px}.topbar{gap:8px}.btn{min-height:40px}}
+
 </style></head>
 <body>
-<div id="splash" class="splash"><div class="splash-inner"><img src="icon.svg" alt="Noor Tools"><h2>NOOR TOOLS</h2><p>إدارة أذكى لمحلّك</p><div style="margin-top:22px;font-size:12px;color:#8a6a2d;letter-spacing:1.4px;font-style:italic">Designed &amp; Developed by<br><b style="font-size:16px;letter-spacing:2px">Ali Gharib</b></div></div></div>
-<div id="login" class="login-screen hidden"><div class="login-card"><div class="login-logo"><img src="icon.svg" alt="شعار نور تولز"></div><h1>نور <span>تولز</span></h1><div class="sub">أدواتك… شغلك… كله في مكان واحد</div><form id="loginForm"><input id="passwordInput" class="field" type="password" placeholder="أدخل كلمة المرور" autocomplete="current-password" required><button class="btn" type="submit">دخول إلى المحل ←</button></form><div class="dev-credit">تصميم وتطوير<br><b>م. علي غريب علي</b><br><span style="display:inline-block;margin:3px 0 5px;font-family:Georgia,serif;font-size:16px;font-style:italic;letter-spacing:1.2px;color:#b38322">Ali Gharib</span><br><span id="devPhone"></span><br><span>نسخة محلية تجريبية — غيّر كلمة المرور من الإعدادات</span></div></div></div>
+<div id="splash" class="splash"><div class="splash-inner"><img src="logo.png" alt="Noor Tools"><h2>NOOR TOOLS</h2><p>إدارة أذكى لمحلّك</p><div style="margin-top:22px;font-size:12px;color:#8a6a2d;letter-spacing:1.4px;font-style:italic">Designed &amp; Developed by<br><b style="font-size:16px;letter-spacing:2px">Ali Gharib</b></div></div></div>
+<div id="login" class="login-screen hidden"><div class="login-card"><div class="login-logo"><img src="logo.png" alt="شعار نور تولز"></div><h1>نور <span>تولز</span></h1><div class="sub">أدواتك… شغلك… كله في مكان واحد</div><form id="loginForm"><input id="passwordInput" class="field" type="password" placeholder="أدخل كلمة المرور" autocomplete="current-password" required><button class="btn" type="submit">دخول إلى المحل ←</button></form><div class="dev-credit">تصميم وتطوير<br><b>م. علي غريب علي</b><br><span style="display:inline-block;margin:3px 0 5px;font-family:Georgia,serif;font-size:16px;font-style:italic;letter-spacing:1.2px;color:#b38322">Ali Gharib</span><br><span id="devPhone"></span><br><span>نسخة محلية تجريبية — غيّر كلمة المرور من الإعدادات</span></div></div></div>
 <div id="app" class="app hidden">
-<aside id="sidebar" class="sidebar"><div class="brand"><img src="icon.svg" alt=""><div><strong>نور تولز</strong><small>إدارة المحل الذكية</small></div></div>
+<aside id="sidebar" class="sidebar"><div class="brand"><img src="logo.png" alt=""><div><strong>نور تولز</strong><small>إدارة المحل الذكية</small></div></div>
 <nav class="nav" id="nav">
 <button class="active" data-page="dashboard"><span class="ico">▦</span>لوحة التحكم</button>
 <button data-page="products"><span class="ico">🔩</span>الأصناف والمخزن</button>
